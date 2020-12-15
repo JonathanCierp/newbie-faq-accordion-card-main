@@ -1,0 +1,183 @@
+:root {
+  --color-very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --color-soft-red: hsl(14, 88%, 65%);
+  --color-soft-violet: hsl(273, 75%, 66%);
+  --color-soft-blue: hsl(240, 73%, 65%);
+  --color-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --color-dark-grayish-blue: hsl(240, 6%, 50%);
+  --color-light-grayish-blue: hsl(240, 5%, 91%);
+  --color-white: #FFFFFF
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  /* Removable classes */
+  background: rgb(175, 103, 233);
+  background: linear-gradient(180deg, rgba(175, 103, 233, 1) 0%, rgba(101, 101, 231, 1) 100%);
+}
+
+/* Main classes */
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Card classes */
+.card {
+  background-color: #FFFFFF;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+  /* Removable classes */
+  position: relative;
+  width: 300px;
+  height: 450px;
+  margin-top: 15%;
+}
+
+.card.card--rounded {
+  border-radius: 10px;
+}
+
+.card .card__brand .card__brand__bg-image {
+  display: none;
+  background: url("../images/illustration-woman-online-desktop.svg") top 8vh right 0 no-repeat,
+  url("../images/bg-pattern-desktop.svg") bottom -14vh right 0 no-repeat;
+  background-size: 120%, 220%;
+}
+
+.card .card__brand .card__brand__floating-image-box {
+  display: none;
+}
+
+.card__brand__floating-image-mobile-woman, .card__brand__floating-image-mobile-shadow {
+  position: absolute;
+}
+
+.card__brand__floating-image-mobile-woman {
+  top: -6.8rem;
+  left: 0;
+}
+
+.card__brand__floating-image-mobile-shadow {
+  top: 0;
+  left: 1.8rem;
+}
+
+.card .card__faq {
+  padding: 8rem 1.5rem;
+}
+
+.card .card__faq h3 {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: .7rem;
+}
+
+.card .card__faq .card__faq__questions .card__faq__question {
+  border-bottom: 1px solid var(--color-light-grayish-blue);
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8rem 0;
+  font-size: .7rem;
+  font-weight: 400;
+  color: var(--color-very-dark-desaturated-blue);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title:hover:not(:focus) {
+  color: var(--color-soft-red);
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title:after {
+  transition: transform .2s;
+  content: "";
+  background-image: url("../images/icon-arrow-down.svg");
+  width: 10px;
+  height: 7px;
+  display: inline-block;
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title:focus, .card .card__faq .card__faq__questions .card__faq__question.card__faq__question--active .card__faq__question__title {
+  font-weight: 700;
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title:focus:after, .card .card__faq .card__faq__questions .card__faq__question.card__faq__question--active .card__faq__question__title:after {
+  transform: rotate(-180deg);
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title:focus + .card__faq__question__answer, .card .card__faq .card__faq__questions .card__faq__question.card__faq__question--active .card__faq__question__title + .card__faq__question__answer {
+  display: block;
+}
+
+.card .card__faq .card__faq__questions .card__faq__question .card__faq__question__answer {
+  display: none;
+  color: var(--color-dark-grayish-blue);
+  padding-bottom: .8rem;
+}
+
+/* Desktop */
+@media (min-width: 950px) {
+  .card {
+    /* Removable classes */
+    display: flex;
+    width: 875px;
+    height: 450px;
+    margin-top: 0;
+  }
+
+  .card .card__brand {
+    position: relative;
+    width: 40%;
+    height: 100%;
+  }
+
+  .card .card__brand .card__brand__bg-image {
+    display: block;
+    background: url("../images/illustration-woman-online-desktop.svg") top 5vh right 0 no-repeat,
+    url("../images/bg-pattern-desktop.svg") bottom -9vh right 0 no-repeat;
+    background-size: 120%, 220%;
+  }
+
+  .card .card__brand .card__brand__floating-image-box {
+    display: block;
+    position: absolute;
+    top: 10.3rem;
+    left: -5.1rem;
+    width: 50%;
+  }
+
+  .card__brand__floating-image-mobile-woman, .card__brand__floating-image-mobile-shadow {
+    display: none;
+  }
+
+  .card .card__faq {
+    width: 60%;
+    height: 100%;
+    padding-left: 5rem;
+    padding-top: 5rem;
+  }
+
+  .card .card__faq h3 {
+    text-align: left;
+  }
+
+  .card .card__faq .card__faq__questions {
+    max-width: 75%;
+    margin-top: 1.5rem;
+  }
+
+  .card .card__faq .card__faq__questions .card__faq__question .card__faq__question__title {
+    font-size: .8rem;
+  }
+}
